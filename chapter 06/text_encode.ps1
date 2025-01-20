@@ -1,0 +1,1 @@
+Get-ChildItem -Path . -Filter '*.txt' | ForEach-Object { $content = Get-Content -Path $_.FullName -Encoding UTF8; $newFileName = [System.IO.Path]::ChangeExtension($_.FullName, '_u16.txt'); Set-Content -Path $newFileName -Value $content -Encoding Unicode }
